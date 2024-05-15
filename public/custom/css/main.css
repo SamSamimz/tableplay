@@ -1,0 +1,112 @@
+#authbox {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+body {
+    font-family: 'ABeeZee', sans-serif;
+}
+
+.banner {
+    background-image: url('../images/casino.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#spinner-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+/* #dice {
+    height: 50px;
+    width: 50px;
+    border-radius: 10%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    align-items: center;
+    justify-items: center;
+} */
+#dice {
+    background-color: crimson;
+    height: 44px;
+    width: 44px;
+    border-radius: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#dice span {
+    margin: 6px;
+    background-color: white;
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+}
+
+.animate {
+    animation: animateRolling .5s ease-in-out infinite;
+}
+
+@keyframes animateRolling {
+    0% {
+        transform: rotate(0deg);
+        opacity: .1;
+    }
+    40% {
+        transform: rotate(-360deg);
+        opacity: 0;
+    }
+    70% {
+        transform: rotate(360deg);
+        opacity: .4;
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+
+.button-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .button-group label {
+    display: inline-block;
+    padding: 30px 40px;
+    background-color: #ddd;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 1000px) { 
+    .button-group label {
+        padding: 15px 25px;
+    }
+
+   }
+  .button-group input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+  
+  .button-group input[type="radio"]:checked + label {
+    background-color: #ec7070;
+    color: white;
+  }
